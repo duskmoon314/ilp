@@ -1,0 +1,39 @@
+[package]
+name = "ilp"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+repository.workspace = true
+license.workspace = true
+include.workspace = true
+
+[dependencies]
+
+#========== workspace ==========
+
+[workspace]
+members = ["crates/*"]
+
+[workspace.package]
+version = "0.1.0"
+authors = ["duskmoon (Campbell He) <kp.campbell.he@duskmoon314.com>"]
+edition = "2021"
+repository = "https://github.com/duskmoon314/ilp"
+license = "MIT"
+include = ["/src", "Cargo.toml", "README.md", "LICENSE"]
+
+[workspace.dependencies]
+error_set = "0.6.0"
+reqwest = { version = "0.12.8", features = [
+    "json",
+    "native-tls",
+    "native-tls-alpn",
+] }
+serde = { version = "1.0.210", features = ["derive"] }
+serde_repr = "0.1.19"
+tokio = { version = "1.40.0", features = ["rt", "net"] }
+url = "2.5.2"
+
+# dev dependencies
+anyhow = "1.0.89"
+serde_json = "1.0.128"
