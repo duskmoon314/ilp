@@ -12,6 +12,7 @@ error_set.workspace = true
 reqwest.workspace = true
 serde.workspace = true
 serde_repr.workspace = true
+thiserror.workspace = true
 tokio.workspace = true
 url.workspace = true
 
@@ -19,3 +20,9 @@ url.workspace = true
 anyhow.workspace = true
 serde_json.workspace = true
 tokio = { workspace = true, features = ["full"] }
+
+[features]
+default = ["v0"]
+
+# v0 api
+v0 = []
